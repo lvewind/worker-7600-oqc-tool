@@ -1,26 +1,24 @@
 [[source]]
+name = "pypi"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
 verify_ssl = true
-name = "pypi"
-
-[packages]
-pyinstaller = "*"
-pywin32 = "==228"
-wmi = "*"
-selenium = "*"
-pyvda = "*"
-tinyaes = "*"
-pywifi = "*"
-pyqt5-sip = "*"
-PyQt5 = "*"
-psutil = "*"
-opencv-python = "*"
-imageio = "*"
-xlwings = "*"
-setuptools = "==57.0.0"
-comtypes = "*"
 
 [dev-packages]
 
+[packages]
+opencv-python = "*"
+pillow = "*"
+psutil = "*"
+pyvda = "==0.0.8"
+pyqt5 = "*"
+pysnooper = "*"
+numpy = "*"
+pywin32 = "*"
+wmi = "*"
+pyinstaller = "*"
+sphinx = "*"
+tinyaes = "*"
+selenium = "*"
+
 [requires]
-python_version = "3.8"
+python_version = "3.10"
