@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets
+from PySide6 import QtWidgets
 from app.source.ui.bridge_input import Ui_Dialog_bridge_input
 from app.data.oqc_test_result import oqc_result
 from app.data.oqc_product_list import oqc_products_list

@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets
+from PySide6 import QtWidgets
 from app.source.ui.save_usb_power import Ui_Dialog_save_usb_power
 from app.data.oqc_test_result import oqc_result
 from app.app_signal.app_signal import signal_main_ui, signal_load_table

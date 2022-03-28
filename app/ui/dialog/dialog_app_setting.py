@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets
+from PySide6 import QtWidgets
 from app.source.ui.app_setting import Ui_Dialog_app_setting
 from app.data.oqc_setting import oqc_setting
 import hiworker

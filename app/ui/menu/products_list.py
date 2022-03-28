@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QMenu
-from PyQt5 import QtGui
+from PySide6.QtWidgets import QMenu
+from PySide6 import QtGui
 
 
 # 运行列表右键菜单

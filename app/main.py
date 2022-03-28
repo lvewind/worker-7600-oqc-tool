@@ -1,5 +1,5 @@
-from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtGui import QCursor
+from PySide6 import QtWidgets, QtCore
+from PySide6.QtGui import QCursor
 from threading import Thread
 import os
 import time

@@ -1,7 +1,7 @@
-import hiworker
+from hiworker.storage import Storage
 
 
-class OqcProductsList(hiworker.UserData):
+class OqcProductsList(Storage):
     """
     产品列表
     """
@@ -9,37 +9,37 @@ class OqcProductsList(hiworker.UserData):
         super(OqcProductsList, self).__init__(table)
 
     def add_product(self, product: dict):
-        return self.add_row(product)
+        return self.db_add_row(product)
 
     def del_product(self, field_name: str, value):
-        return self.del_row(field_name, value, [], [])
+        return self.db_del_row(field_name, value, [], [])
 
     def edit_product(self, data_item: dict, ref_field, ref_value):
-        return self.update_row(data_item, ref_field, ref_value)
+        return self.db_update_row(data_item, ref_field, ref_value)
 
     def get_sn(self, index):
-        value = self.read_row_field(index, "sn")
+        value = self.db_read_row_field(index, "sn")
         if value:
             return value
         else:
             return ""
 
     def get_mac_addr(self, index):
-        value = self.read_row_field(index, "mac_addr")
+        value = self.db_read_row_field(index, "mac_addr")
         if value:
             return value
         else:
             return ""
 
     def get_web_passwd(self, index):
-        value = self.read_row_field(index, "web_passwd")
+        value = self.db_read_row_field(index, "web_passwd")
         if value:
             return value
         else:
             return ""
 
     def get_wifi_passwd(self, index):
-        value = self.read_row_field(index, "wifi_passwd")
+        value = self.db_read_row_field(index, "wifi_passwd")
         if value:
             return value
         else:

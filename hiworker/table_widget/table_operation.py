@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QTableWidgetItem, QTableWidget
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtGui import QBrush, QColor
+from PySide6.QtWidgets import QTableWidgetItem, QTableWidget
+from PySide6 import QtCore, QtWidgets
+from PySide6.QtGui import QBrush, QColor
 from ..user_data.user_data import UserData
 import datetime
 import re
@@ -259,7 +259,7 @@ class TableLoad:
                 break
 
     @classmethod
-    def set_table_item(cls, list_table: QTableWidget, text, row, col, bg_color: list, is_time=False, align="center"):
+    def set_table_item(cls, list_table: QTableWidget, text, row, col, bg_color=None, is_time=False, align="center"):
         if not list_table.item(row, col):
             list_table.setItem(row, col, QTableWidgetItem(""))
             if align == "center":
@@ -276,7 +276,8 @@ class TableLoad:
                 list_table.item(row, col).setText(str(text))
         else:
             list_table.item(row, col).setText("")
-        list_table.item(row, col).setBackground(QBrush(QColor(bg_color[0], bg_color[1], bg_color[2])))
+        if bg_color:
+            list_table.item(row, col).setBackground(QBrush(QColor(bg_color[0], bg_color[1], bg_color[2])))
 
     @staticmethod
     def sort_by_dict_key(item, key):

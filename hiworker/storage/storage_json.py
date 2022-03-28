@@ -8,7 +8,7 @@ class StorageJSON(JsonReadWrite):
             self.json_file_name = self.table + ".json"
         else:
             self.json_file_name = ""
-        super(StorageJSON, self).__init__()
+        super(StorageJSON, self).__init__(filename)
         self.data = []
         self.load_list()
 

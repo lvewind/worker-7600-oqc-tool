@@ -1,7 +1,7 @@
-from hiworker.user_data import UserData
+from hiworker.storage import Storage
 
 
-class OqcUser(UserData):
+class OqcUser(Storage):
     """
     不良品列表
     """

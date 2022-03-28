@@ -1,6 +1,6 @@
 from app.source.ui.main_export import Ui_MainWindow
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import QObject, pyqtSignal
+from PySide6 import QtWidgets
+from PySide6.QtCore import QObject, Signal
 import os
 import xlwings as xw
 import time
@@ -8,7 +8,7 @@ from threading import Thread
 
 
 class SignalApp(QObject):
-    signal_info = pyqtSignal(str)
+    signal_info = Signal(str)
 
 
 signal_app = SignalApp()

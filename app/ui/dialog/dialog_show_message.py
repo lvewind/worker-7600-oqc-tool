@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets
+from PySide6 import QtWidgets
 from app.source.ui.show_message import Ui_Dialog_show_message
 from app.app_signal.app_signal import signal_main_ui
 

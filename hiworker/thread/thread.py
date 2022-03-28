@@ -1,5 +1,5 @@
-from PyQt5.QtCore import QThread
-from PyQt5.QtCore import QMutex
+from PySide6.QtCore import QThread
+from PySide6.QtCore import QMutex
 
 
 class Thread(QThread):

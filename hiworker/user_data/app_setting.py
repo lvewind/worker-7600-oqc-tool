@@ -1,6 +1,5 @@
-from config.db import db_con
-from .user_data_json import UserDataJSON
-from .user_data_sqlite import UserDataSQLite
+from config.db import db_config
+from ..storage import StorageJSON, StorageSQLite
 
 
 class AppSetting:
@@ -8,10 +7,10 @@ class AppSetting:
         self.data = []
         self.table = "app_setting"
         if use_sqlite:
-            self.db = UserDataSQLite(self.table, db_con)
+            self.db = StorageSQLite(self.table, db_config)
         else:
             self.json_file_name = self.table + ".json"
-            self.db = UserDataJSON(self.json_file_name)
+            self.db = StorageJSON(self.json_file_name)
         self.parent_table = ""
         self.refresh_data()
 

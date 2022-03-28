@@ -5,12 +5,6 @@ w = wmi.WMI()
 cpu = w.Win32_Processor()
 
 
-if cpu[0].ProcessorId == "BFEBFBFF000A0655" or cpu[0].ProcessorId == "BFEBFBFF000906EA" or cpu[0].ProcessorId == "BFEBFBFF000306F2":
-    pass
-else:
-    BFEBFBFF000A0655
-
-
 def get_network_eth_list():
     pythoncom.CoInitialize()
     c = wmi.WMI()
