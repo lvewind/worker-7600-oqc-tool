@@ -7,6 +7,10 @@ class OqcSetting(Storage):
     """
     def __init__(self, table):
         super(OqcSetting, self).__init__(table)
+        try:
+            self.db_add_row({"id": 1})
+        except:
+            pass
 
     def set_eth(self, lan_eth, wlan_eth, bridge_ctrl_eth):
         eth = {"lan_eth": lan_eth, "wlan_eth": wlan_eth, "bridge_ctrl_eth": bridge_ctrl_eth}
@@ -45,34 +49,34 @@ class OqcSetting(Storage):
         return self.db_update_row({"main_ap_passwd": main_ap_passwd}, "id", 1)
 
     def get_auto_txt(self):
-        return self.db_read_row("id", 1).get("auto_txt")
+        return self.db_read_row(1, "id").get("auto_txt")
 
     def get_auto_ip_200(self):
-        return self.db_read_row("id", 1).get("auto_ip_200")
+        return self.db_read_row(1, "id").get("auto_ip_200")
 
     def get_lan_eth(self):
-        return self.db_read_row("id", 1).get("lan_eth")
+        return self.db_read_row(1, "id").get("lan_eth")
 
     def get_wlan_eth(self):
-        return self.db_read_row("id", 1).get("wlan_eth")
+        return self.db_read_row(1, "id").get("wlan_eth")
 
     def get_bridge_ctrl_eth(self):
-        return self.db_read_row("id", 1).get("bridge_ctrl_eth")
+        return self.db_read_row(1, "id").get("bridge_ctrl_eth")
 
     def get_auto_speed(self):
-        return self.db_read_row("id", 1).get("auto_speed")
+        return self.db_read_row(1, "id").get("auto_speed")
 
     def get_auto_text(self):
-        return self.db_read_row("id", 1).get("auto_txt")
+        return self.db_read_row(1, "id").get("auto_txt")
 
     def get_open_text(self):
-        return self.db_read_row("id", 1).get("open_after_txt")
+        return self.db_read_row(1, "id").get("open_after_txt")
 
     def get_main_ap_ssid(self):
-        return self.db_read_row("id", 1).get("main_ap_ssid")
+        return self.db_read_row(1, "id").get("main_ap_ssid")
 
     def get_main_ap_passwd(self):
-        return self.db_read_row("id", 1).get("main_ap_passwd")
+        return self.db_read_row(1, "id").get("main_ap_passwd")
 
 
 oqc_setting = OqcSetting("oqc_setting")

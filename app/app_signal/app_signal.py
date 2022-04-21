@@ -1,8 +1,8 @@
-from PySide6.QtCore import QObject, pyqtSignal
+from PySide6.QtCore import QObject, Signal
 
 
 class SignalData(QObject):
-    add_item = pyqtSignal(dict)
+    add_item = Signal(dict)
 
 
 class SignalDialog(QObject):
@@ -10,26 +10,26 @@ class SignalDialog(QObject):
 
 
 class SignalLoadTable(QObject):
-    load_products_list = pyqtSignal()
-    find_sn_in_products_list = pyqtSignal(str)
+    load_products_list = Signal()
+    find_sn_in_products_list = Signal(str)
 
 
 class SignalMainUI(QObject):
-    refresh_text_browser = pyqtSignal(str)
-    refresh_text_browser_ping_100 = pyqtSignal(str)
-    refresh_text_browser_ping_254 = pyqtSignal(str)
-    refresh_eth = pyqtSignal()
-    run_iperf3 = pyqtSignal()
-    set_has_output = pyqtSignal()
-    check_iot_again = pyqtSignal()
-    iperf_all = pyqtSignal()
-    show_message = pyqtSignal(str)
-    show_input_dialog = pyqtSignal()
-    save_bridge_ip = pyqtSignal(str)
+    refresh_text_browser = Signal(str)
+    refresh_text_browser_ping_100 = Signal(str)
+    refresh_text_browser_ping_254 = Signal(str)
+    refresh_eth = Signal()
+    run_iperf3 = Signal()
+    set_has_output = Signal()
+    check_iot_again = Signal()
+    iperf_all = Signal()
+    show_message = Signal(str)
+    show_input_dialog = Signal()
+    save_bridge_ip = Signal(str)
 
 
 class CloseSelf(QObject):
-    close_self = pyqtSignal(str)
+    close_self = Signal(str)
 
 
 signal_data = SignalData()

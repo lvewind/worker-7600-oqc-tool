@@ -371,8 +371,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         pass
 
     def filter_table_products_list(self):
-        target_time_start = self.dateEdit_1.dateTime().toTime_t()
-        target_time_end = self.dateEdit_2.dateTime().toTime_t() + 86400
+        target_time_start = self.dateEdit_1.dateTime().currentSecsSinceEpoch()
+        target_time_end = self.dateEdit_2.dateTime().currentSecsSinceEpoch() + 86400
         self.load_table_products_list(target_time_1=target_time_start, target_time_2=target_time_end)
 
     def load_table_products_list(self, target_time_1=None, target_time_2=None):
@@ -384,12 +384,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             day_start = target_time_1
             day_end = target_time_2
         else:
-            # current_time = time.time()
-            # today = time.localtime(current_time)
-            # day_start = current_time - (today.tm_hour * 3600 + today.tm_min * 60 + today.tm_sec)
-            # day_end = day_start + 86400
-            day_start = self.dateEdit_1.dateTime().toTime_t()
-            day_end = self.dateEdit_2.dateTime().toTime_t() + 86400
+            day_start = self.dateEdit_1.dateTime().currentSecsSinceEpoch()
+            day_end = self.dateEdit_2.dateTime().currentSecsSinceEpoch() + 86400
         current_day_data = []
         if oqc_products_list.data:
             for data_dict in oqc_products_list.data:
